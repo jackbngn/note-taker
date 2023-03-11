@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 65px;
+	color: grey;
+}
+img {
+	padding-left: 35px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+}
+
+#home {
+	height: 40px;
+	border: none;
+	text-align: center;
+	background-color: lightgrey;
+	margin: 30px;
+	margin-left: 90px;
+	transition: 0.2s ease-in-out;
+}
+
+#home:active {
+	background-color: grey;
+	color: white;
+}
