@@ -6,7 +6,7 @@ The Note Taker application is an Express.js-based application that allows users 
 
 ## Installation
 
-npm i express
+npm i express <br>
 npm i uuid
 
 ## Usage
