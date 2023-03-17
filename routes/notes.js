@@ -1,17 +1,18 @@
+//Import node modules
 const notes = require("express").Router();
-
 const { v4: uuid } = require("uuid");
-
 const {
 	readFromFile,
 	readAndAppend,
 	writeToFile,
 } = require("../helper/fsutils");
 
+// Handles the get request for /notes
 notes.get("/", (req, res) => {
 	readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
+//Handles the get request for /notes/:id
 notes.get("/:id", (req, res) => {
 	const note_id = req.params.id;
 
@@ -25,6 +26,7 @@ notes.get("/:id", (req, res) => {
 		});
 });
 
+//Handles the delete request for /notes/:id
 notes.delete("/:id", (req, res) => {
 	const note_id = req.params.id;
 	readFromFile("./db/db.json")
@@ -38,6 +40,7 @@ notes.delete("/:id", (req, res) => {
 		});
 });
 
+//Handle POST request for /notes
 notes.post("/", (req, res) => {
 	console.log(req.body);
 
@@ -56,4 +59,5 @@ notes.post("/", (req, res) => {
 	}
 });
 
+//Export the note router
 module.exports = notes;
